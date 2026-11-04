@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel de administración del Catálogo de Posventa." />
+    <title>Administración | Catálogo de Posventa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="mercedes-brand-logo-symbol-white-design-german-car-automobile-illustration-with-black-background-free-vector.jpg"
+    />
+    <link rel="stylesheet" href="styles.css?v=20261006" />
+  </head>
+  <body class="admin-page">
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Administración">
+        <a class="brand" href="/" aria-label="Volver al catálogo">
+          <img
+            class="brand-logo"
+            src="mercedes-brand-logo-symbol-white-design-german-car-automobile-illustration-with-black-background-free-vector.jpg"
+            alt="Mercedes-Benz"
+          />
+          <span>
+            <strong>Cigliutti Guerini</strong>
+            <small>Panel de administración</small>
+          </span>
+        </a>
+        <div class="nav-actions admin-nav-actions">
+          <span id="adminUser" class="admin-user"></span>
+          <a class="icon-link" href="/">Catálogo</a>
+          <button class="button button-nav" id="logoutButton" type="button" hidden>Cerrar sesión</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-login" id="loginView" aria-labelledby="loginTitle">
+        <div class="admin-login-panel">
+          <span class="section-label">Acceso restringido</span>
+          <h1 id="loginTitle">Ingresar al panel</h1>
+          <p>Solo usuarios con rol de administración pueden cargar o modificar productos.</p>
+          <form class="admin-form" id="loginForm">
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="username" required />
+            </label>
+            <label>
+              Contraseña
+              <input name="password" type="password" autocomplete="current-password" required />
+            </label>
+            <button class="button button-dark" type="submit">Ingresar</button>
+          </form>
+          <p class="admin-message" id="loginMessage" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="admin-dashboard" id="dashboardView" hidden>
+        <div class="section-heading admin-heading">
+          <div>
+            <h1>Administración de productos</h1>
+            <p>Gestioná el catálogo público y la disponibilidad desde un único lugar.</p>
+          </div>
+          <button class="button button-dark" id="newProductButton" type="button">Nuevo producto</button>
+        </div>
+
+        <section class="excel-panel admin-form" aria-labelledby="excelTitle">
+          <div><h2 id="excelTitle">Carga masiva de productos</h2></div>
+          <p>Descargá la plantilla para cargar productos nuevos o el catálogo para actualizar los existentes. Subí el archivo para importar los productos directamente.</p>
+          <div class="excel-actions">
+            <button class="button admin-secondary-button" id="downloadTemplate" type="button">Descargar plantilla</button>
+            <button class="button admin-secondary-button" id="exportCatalog" type="button">Exportar catálogo</button>
+          </div>
+          <p class="excel-help">Conservá el ID para actualizar y dejalo vacío para crear. Una celda de imagen vacía conserva la imagen actual.</p>
+          <form id="excelForm">
+            <label for="excelFile">Archivo Excel (.xlsx, hasta 5 MB y 2000 productos)</label>
+            <div class="excel-actions">
+              <input id="excelFile" type="file" accept=".xlsx" required />
+              <button class="button button-dark" id="excelImport" type="submit">Importar Excel</button>
+            </div>
+          </form>
+          <p id="excelMessage" class="admin-message" role="status" aria-live="polite"></p>
+          <ul id="excelErrors"></ul>
+        </section>
+
+        <div class="admin-layout">
+          <form class="admin-form product-editor" id="productForm">
+            <input name="id" type="hidden" />
+            <div class="form-title-row">
+              <h2 id="formTitle">Cargar producto</h2>
+              <button class="button admin-secondary-button" id="cancelEditButton" type="button" hidden>
+                Cancelar edición
+              </button>
+            </div>
+            <label>
+              Nombre
+              <input name="name" type="text" required />
+            </label>
+            <div class="admin-field-grid">
+              <label>
+                Categoría
+                <select name="category" required>
+                  <option value="Repuestos">Repuestos</option>
+                  <option value="Accesorios">Accesorios</option>
+                  <option value="Lubricantes">Lubricantes</option>
+                </select>
+              </label>
+              <label>
+                Aplicación
+                <select name="application" required>
+                  <option value="Camiones">Camiones</option>
+                  <option value="Vans">Vans</option>
+                  <option value="Ambos">Ambos</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Descripción
+              <textarea name="description" rows="4" required></textarea>
+            </label>
+            <fieldset class="model-selector">
+              <legend>Modelos compatibles</legend>
+              <p>Seleccioná uno o varios modelos según la aplicación elegida.</p>
+              <div class="model-options" id="modelOptions"></div>
+            </fieldset>
+            <div class="admin-field-grid">
+              <label>
+                Precio
+                <input name="price" type="number" min="0" step="1" required />
+              </label>
+              <label>
+                Stock
+                <input name="stock" type="number" min="0" step="1" required />
+              </label>
+            </div>
+            <div class="admin-field-grid">
+              <label>
+                Etiqueta
+                <select name="badge">
+                  <option value="">Sin etiqueta</option>
+                  <option value="Oferta">Oferta</option>
+                  <option value="Nuevo">Nuevo</option>
+                  <option value="Destacado">Destacado</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Imagen o ruta existente
+              <input name="image" type="text" placeholder="assets/products/imagen.svg" required />
+            </label>
+            <label>
+              Adjuntar imagen
+              <input name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" />
+            </label>
+            <div class="image-preview" id="imagePreview" hidden>
+              <span>Vista previa</span>
+              <img alt="" />
+            </div>
+            <div class="admin-field-grid">
+              <label>
+                Estado
+                <select name="status">
+                  <option value="active">Activo</option>
+                  <option value="inactive">Dado de baja</option>
+                </select>
+              </label>
+              <label class="checkbox-field">
+                <input name="sold" type="checkbox" />
+                Marcar como vendido
+              </label>
+            </div>
+            <button class="button button-dark" type="submit">Guardar producto</button>
+            <p class="admin-message" id="productMessage" aria-live="polite"></p>
+          </form>
+
+          <div class="admin-products-panel">
+            <div class="admin-products-toolbar">
+              <label class="search-box" for="adminSearch">
+                <span>Buscar</span>
+                <input id="adminSearch" type="search" placeholder="Nombre o descripción" />
+              </label>
+              <div class="catalog-count" id="adminCount"></div>
+            </div>
+            <div class="admin-filter-grid" aria-label="Filtros de productos cargados">
+              <label>
+                Categoría
+                <select id="categoryFilter">
+                  <option value="">Todas</option>
+                  <option value="Repuestos">Repuestos</option>
+                  <option value="Accesorios">Accesorios</option>
+                  <option value="Lubricantes">Lubricantes</option>
+                </select>
+              </label>
+              <label>
+                Aplicación
+                <select id="applicationFilter">
+                  <option value="">Todas</option>
+                  <option value="Camiones">Camiones</option>
+                  <option value="Vans">Vans</option>
+                  <option value="Ambos">Ambos</option>
+                </select>
+              </label>
+              <label>
+                Modelo
+                <select id="modelFilter">
+                  <option value="">Todos</option>
+                </select>
+              </label>
+              <label>
+                Estado
+                <select id="statusFilter">
+                  <option value="">Todos</option>
+                  <option value="active">Activo</option>
+                  <option value="sold">Vendido</option>
+                  <option value="inactive">Dado de baja</option>
+                  <option value="out-of-stock">Sin stock</option>
+                </select>
+              </label>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="adminProducts"></tbody>
+              </table>
+            </div>
+            <p class="empty-state" id="adminEmpty" hidden>No hay productos para mostrar.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/vendor/exceljs.min.js?v=4.4.0" defer></script>
+    <script src="admin.js?v=20261104" defer></script>
+  </body>
+</html>

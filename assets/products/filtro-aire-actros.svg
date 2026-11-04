@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title">
+  <title id="title">Filtro de aire Actros</title>
+  <rect width="640" height="520" fill="#f5f6f7"/>
+  <rect x="80" y="110" width="480" height="300" rx="8" fill="#fff" stroke="#d7dce0"/>
+  <ellipse cx="320" cy="175" rx="150" ry="52" fill="#fff" stroke="#111214" stroke-width="12"/>
+  <path d="M170 175v150c0 29 67 52 150 52s150-23 150-52V175" fill="#eef0f2" stroke="#111214" stroke-width="12"/>
+  <path d="M205 205v125M245 220v125M285 228v132M325 230v132M365 228v132M405 220v125M445 205v125" stroke="#9aa2aa" stroke-width="9"/>
+  <ellipse cx="320" cy="325" rx="150" ry="52" fill="none" stroke="#111214" stroke-width="12"/>
+  <text x="140" y="92" fill="#111214" font-family="Inter, Arial" font-size="24" font-weight="700">FILTRO DE AIRE</text>
+</svg>

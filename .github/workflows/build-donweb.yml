@@ -1,0 +1,35 @@
+name: Preparar DonWeb
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Verificar JavaScript
+        run: npm run check
+
+      - name: Construir paquete para Ferozo
+        run: npm run build:donweb
+
+      - name: Publicar paquete descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: repuestos-donweb
+          path: output/donweb/
+          if-no-files-found: error

@@ -1,0 +1,67 @@
+# ==============================================================================
+# ARCHIVO .HTACCESS PRINCIPAL PARA LA RAÍZ DE DONWEB (public_html/)
+# ==============================================================================
+# Cinturón y tiradores: aunque datos/ ya tiene su propio .htaccess, se bloquea
+# por extensión cualquier volcado de consultas que quede en el docroot.
+<FilesMatch "\.(jsonl|env|log|sqlite|sqlite-wal|sqlite-shm)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# El listado de directorios se apaga: assets/ tiene todo el material del sitio.
+Options -Indexes
+
+# Estos dominios comparten esta cuenta de Ferozo. Klasse usa public_html;
+# BYD, Kurasu, Grupo Cigliutti Guerini y Repuestos se publican en directorios aislados.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ----------------------------------------------------------------------------
+  # Redirección obligatoria a HTTPS (excepto desafíos Let's Encrypt / Cloudflare)
+  # ----------------------------------------------------------------------------
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:CDN-LOOP} !cloudflare
+  RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/
+  RewriteCond %{HTTP_HOST} ^(www\.)?bydcigue\.com\.ar [OR]
+  RewriteCond %{HTTP_HOST} ^(www\.)?bydescobar\.com\.ar [OR]
+  RewriteCond %{HTTP_HOST} ^(www\.)?bydsanmiguel\.com\.ar [OR]
+  RewriteCond %{HTTP_HOST} ^(www\.)?repuestos\.cigue\.com\.ar
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
+
+  # ----------------------------------------------------------------------------
+  # Kurasu
+  # ----------------------------------------------------------------------------
+  RewriteCond %{HTTP_HOST} ^(www\.)?kurasu\.com\.ar(?::\d+)?$ [NC]
+  RewriteRule ^img/(.*)$ /kurasu/img/$1 [R=302,L,NE]
+
+  RewriteCond %{HTTP_HOST} ^(www\.)?kurasu\.com\.ar(?::\d+)?$ [NC]
+  RewriteCond %{REQUEST_URI} !^/kurasu(?:/|$) [NC]
+  RewriteRule ^(.*)$ kurasu/$1 [L]
+
+  # ----------------------------------------------------------------------------
+  # BYD (Pilar, Escobar, Cigue, San Miguel)
+  # ----------------------------------------------------------------------------
+  RewriteCond %{HTTP_HOST} ^(www\.)?(bydpilar|bydescobar|bydcigue|bydsanmiguel)\.com\.ar(?::\d+)?$ [NC]
+  RewriteCond %{REQUEST_URI} !^/BYDPilar(?:/|$) [NC]
+  RewriteRule ^(.*)$ BYDPilar/$1 [L]
+
+  # ----------------------------------------------------------------------------
+  # Grupo Cigliutti Guerini
+  # ----------------------------------------------------------------------------
+  RewriteCond %{HTTP_HOST} ^(www\.)?grupocigliuttiguerini\.com\.ar(?::\d+)?$ [NC]
+  RewriteCond %{REQUEST_URI} !^/cigliuttiguerini(?:/|$) [NC]
+  RewriteRule ^(.*)$ cigliuttiguerini/$1 [L]
+
+  # ----------------------------------------------------------------------------
+  # Repuestos Cigliutti Guerini (Mercedes-Benz Camiones y Vans)
+  # ----------------------------------------------------------------------------
+  RewriteCond %{HTTP_HOST} ^(www\.)?repuestos\.cigue\.com\.ar(?::\d+)?$ [NC]
+  RewriteCond %{REQUEST_URI} !^/repuestos(?:/|$) [NC]
+  RewriteRule ^(.*)$ repuestos/$1 [L]
+
+</IfModule>

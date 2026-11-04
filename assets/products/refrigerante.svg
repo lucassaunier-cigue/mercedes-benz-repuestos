@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title">
+  <title id="title">Líquido refrigerante</title>
+  <rect width="640" height="520" fill="#f5f6f7"/>
+  <rect x="210" y="95" width="220" height="330" rx="22" fill="#fff" stroke="#111214" stroke-width="10"/>
+  <rect x="255" y="60" width="130" height="55" rx="8" fill="#111214"/>
+  <rect x="245" y="175" width="150" height="150" rx="8" fill="#dff7f1" stroke="#00a884" stroke-width="8"/>
+  <path d="M320 200c36 42 55 74 55 101 0 32-24 55-55 55s-55-23-55-55c0-27 19-59 55-101z" fill="#00a884"/>
+  <path d="M280 375h80" stroke="#111214" stroke-width="12" stroke-linecap="round"/>
+  <text x="235" y="155" fill="#111214" font-family="Inter, Arial" font-size="23" font-weight="800">REFRIGERANTE</text>
+</svg>

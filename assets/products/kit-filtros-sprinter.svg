@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title">
+  <title id="title">Kit de filtros Sprinter</title>
+  <rect width="640" height="520" fill="#f5f6f7"/>
+  <rect x="70" y="95" width="500" height="330" rx="8" fill="#fff" stroke="#d7dce0"/>
+  <rect x="120" y="165" width="150" height="205" rx="12" fill="#f0f2f4" stroke="#111214" stroke-width="8"/>
+  <path d="M145 190h100M145 225h100M145 260h100M145 295h100M145 330h100" stroke="#9aa2aa" stroke-width="8"/>
+  <rect x="315" y="185" width="180" height="150" rx="10" fill="#111214"/>
+  <path d="M340 215h130M340 250h130M340 285h130" stroke="#fff" stroke-width="10"/>
+  <circle cx="485" cy="375" r="32" fill="#111214"/>
+  <circle cx="485" cy="375" r="18" fill="#fff"/>
+  <text x="120" y="130" fill="#111214" font-family="Inter, Arial" font-size="24" font-weight="700">KIT FILTROS</text>
+</svg>

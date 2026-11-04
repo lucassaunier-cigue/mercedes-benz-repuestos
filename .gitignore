@@ -1,0 +1,10 @@
+node_modules/
+data/*.sqlite
+data/*.sqlite-*
+data/backups/
+.playwright-cli/
+output/
+.DS_Store
+config.local.php
+donweb/config.local.php
+.env
