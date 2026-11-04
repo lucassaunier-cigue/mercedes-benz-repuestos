@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,3 +36,19 @@ jobs:
           name: repuestos-donweb
           path: output/donweb/
           if-no-files-found: error
+
+      - name: Actualizar rama para DonWeb
+        env:
+          REPOSITORY: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          TOKEN: ${{ github.token }}
+        run: |
+          deploy_dir="$(mktemp -d)"
+          cp -R output/donweb/repuestos/. "$deploy_dir/"
+          git -C "$deploy_dir" init -b donweb
+          git -C "$deploy_dir" config user.name "github-actions[bot]"
+          git -C "$deploy_dir" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C "$deploy_dir" add .
+          git -C "$deploy_dir" commit -m "Deploy ${SHA}"
+          git -C "$deploy_dir" remote add origin "https://x-access-token:${TOKEN}@github.com/${REPOSITORY}.git"
+          git -C "$deploy_dir" push --force origin donweb
