@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo de Posventa de Cigliutti Guerini para Mercedes-Benz Camiones y Vans."
+    />
+    <meta name="theme-color" content="#050607" />
+    <meta property="og:title" content="Catálogo de Posventa | Cigliutti Guerini" />
+    <meta property="og:description" content="Repuestos, accesorios y lubricantes para Mercedes-Benz Camiones y Vans." />
+    <title>Catálogo de Posventa | Cigliutti Guerini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="mercedes-brand-logo-symbol-white-design-german-car-automobile-illustration-with-black-background-free-vector.jpg"
+    />
+    <link rel="stylesheet" href="styles.css?v=20261006" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Principal">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <img
+            class="brand-logo"
+            src="mercedes-brand-logo-symbol-white-design-german-car-automobile-illustration-with-black-background-free-vector.jpg"
+            alt="Mercedes-Benz"
+          />
+          <span>
+            <strong>Cigliutti Guerini</strong>
+            <small>Mercedes-Benz Camiones y Vans</small>
+          </span>
+        </a>
+        <div class="nav-actions">
+          <a class="icon-link" href="#catalogo">Catálogo</a>
+          <a class="icon-link" href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <h1>Catálogo de Posventa</h1>
+            <span class="hero-line" aria-hidden="true"></span>
+            <p class="hero-subtitle">Cigliutti Guerini | Mercedes-Benz Camiones y Vans</p>
+            <p class="hero-text">
+              Encontrá repuestos, accesorios y productos seleccionados para el mantenimiento
+              de tu unidad.
+            </p>
+            <div class="hero-actions" aria-label="Canales de contacto">
+              <a class="button button-dark" href="#catalogo">Ver catálogo</a>
+              <a class="button button-light" href="#contacto">Contactar a Posventa</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">Catálogo digital</span>
+            <h2 id="catalog-title">Encontrá el producto que necesitás</h2>
+            <p>Buscá por nombre, modelo o categoría y consultá directamente con Posventa.</p>
+          </div>
+          <div class="catalog-count" id="catalogCount" aria-live="polite"></div>
+        </div>
+
+        <div class="toolbar" aria-label="Filtros del catálogo">
+          <label class="search-box" for="searchInput">
+            <span>Buscar</span>
+            <input id="searchInput" type="search" placeholder="Nombre del producto" autocomplete="off" />
+          </label>
+          <div class="filter-group" id="filters" role="list" aria-label="Filtrar productos"></div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>
+          No encontramos productos con esos filtros.
+        </p>
+      </section>
+
+      <section class="contact-section" id="contacto" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <span class="section-label">Atención directa</span>
+          <h2 id="contact-title">Contacto de Posventa</h2>
+          <p>La compra se coordina directamente con el equipo de Posventa.</p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" id="contactWhatsapp" target="_blank" rel="noreferrer">
+            <span>WhatsApp de Posventa</span>
+            <strong id="whatsappLabel">Configurar número</strong>
+          </a>
+          <a class="contact-item" href="mailto:posventa@cigue.com.ar">
+            <span>Mail</span>
+            <strong>posventa@cigue.com.ar</strong>
+          </a>
+          <div class="contact-item">
+            <span>Horarios de atención</span>
+            <strong>Lunes a viernes de 8:00 a 17:00 hs</strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Cigliutti Guerini | Mercedes-Benz Camiones y Vans</span>
+      <span>Catálogo informativo. Precios sujetos a modificación.</span>
+    </footer>
+
+    <a
+      class="floating-whatsapp"
+      id="floatingWhatsapp"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Consultar por WhatsApp"
+    >
+      <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false">
+        <path
+          d="M16.01 3.05c-7.08 0-12.84 5.73-12.84 12.78 0 2.42.68 4.77 1.96 6.81L3.04 30.3l7.85-2.06a12.9 12.9 0 0 0 5.12 1.04c7.08 0 12.84-5.73 12.84-12.78S23.09 3.05 16.01 3.05Zm0 23.96c-1.68 0-3.33-.38-4.84-1.12l-.35-.17-4.65 1.22 1.24-4.5-.23-.37a10.57 10.57 0 0 1-1.75-5.88c0-5.83 4.75-10.57 10.58-10.57s10.58 4.74 10.58 10.57S21.84 27.01 16.01 27.01Zm6.08-7.91c-.33-.17-1.96-.96-2.26-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.17-1.4-.51-2.66-1.63-.98-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.51.14-.68.15-.15.33-.38.5-.58.17-.19.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.74-1.79-1.02-2.45-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.42-.3.33-1.16 1.13-1.16 2.76 0 1.62 1.19 3.19 1.35 3.41.17.22 2.34 3.57 5.67 5.01.79.34 1.41.55 1.9.7.8.25 1.52.22 2.09.13.64-.1 1.96-.8 2.24-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.39Z"
+        />
+      </svg>
+    </a>
+
+    <script src="script.js?v=20261104" defer></script>
+  </body>
+</html>

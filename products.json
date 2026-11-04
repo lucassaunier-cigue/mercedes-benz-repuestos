@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "name": "Kit de filtros Sprinter",
+    "category": "Repuestos",
+    "application": "Vans",
+    "models": [
+      "Sprinter"
+    ],
+    "description": "Kit de filtros para servicios preventivos en unidades Sprinter.",
+    "price": 128500,
+    "stock": 14,
+    "badge": "Destacado",
+    "image": "assets/products/kit-filtros-sprinter.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 2,
+    "name": "Aceite original Mercedes-Benz",
+    "category": "Lubricantes",
+    "application": "Ambos",
+    "models": [
+      "Accelo",
+      "Atego",
+      "Actros",
+      "Arocs",
+      "Axor",
+      "Sprinter",
+      "Vito"
+    ],
+    "description": "Lubricante original recomendado para mantenimiento programado.",
+    "price": 46200,
+    "stock": 28,
+    "badge": "Nuevo",
+    "image": "assets/products/aceite-original.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 3,
+    "name": "Escobillas limpiaparabrisas",
+    "category": "Accesorios",
+    "application": "Ambos",
+    "models": [
+      "Accelo",
+      "Atego",
+      "Actros",
+      "Arocs",
+      "Axor",
+      "Sprinter",
+      "Vito"
+    ],
+    "description": "Juego de escobillas para óptima visibilidad en ruta y ciudad.",
+    "price": 38900,
+    "stock": 18,
+    "badge": "Oferta",
+    "image": "assets/products/escobillas.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 4,
+    "name": "Kit de mantenimiento Atego",
+    "category": "Repuestos",
+    "application": "Camiones",
+    "models": [
+      "Atego"
+    ],
+    "description": "Selección de piezas para mantenimiento periódico de Atego.",
+    "price": 254000,
+    "stock": 9,
+    "badge": "Destacado",
+    "image": "assets/products/kit-atego.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 5,
+    "name": "Filtro de aire Actros",
+    "category": "Repuestos",
+    "application": "Camiones",
+    "models": [
+      "Actros"
+    ],
+    "description": "Filtro de aire para proteger el sistema de admisión del motor.",
+    "price": 94500,
+    "stock": 12,
+    "badge": "",
+    "image": "assets/products/filtro-aire-actros.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 6,
+    "name": "Batería para Vans",
+    "category": "Repuestos",
+    "application": "Vans",
+    "models": [
+      "Sprinter",
+      "Vito"
+    ],
+    "description": "Batería de alto rendimiento para aplicaciones comerciales livianas.",
+    "price": 218000,
+    "stock": 6,
+    "badge": "Oferta",
+    "image": "assets/products/bateria-vans.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 7,
+    "name": "Líquido refrigerante",
+    "category": "Lubricantes",
+    "application": "Ambos",
+    "models": [
+      "Accelo",
+      "Atego",
+      "Actros",
+      "Arocs",
+      "Axor",
+      "Sprinter",
+      "Vito"
+    ],
+    "description": "Refrigerante para protección térmica y anticorrosiva del circuito.",
+    "price": 31496,
+    "stock": 35,
+    "badge": "",
+    "image": "assets/products/refrigerante.svg",
+    "status": "active",
+    "sold": false
+  },
+  {
+    "id": 8,
+    "name": "Accesorio interior Sprinter",
+    "category": "Accesorios",
+    "application": "Vans",
+    "models": [
+      "Sprinter"
+    ],
+    "description": "Accesorio interior pensado para mejorar orden, confort y uso diario.",
+    "price": 76500,
+    "stock": 11,
+    "badge": "Nuevo",
+    "image": "assets/products/accesorio-interior.svg",
+    "status": "active",
+    "sold": false
+  }
+]

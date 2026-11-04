@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title">
+  <title id="title">Kit de mantenimiento Atego</title>
+  <rect width="640" height="520" fill="#f5f6f7"/>
+  <rect x="78" y="100" width="484" height="320" rx="8" fill="#fff" stroke="#d7dce0"/>
+  <rect x="115" y="155" width="175" height="150" rx="12" fill="#111214"/>
+  <rect x="142" y="184" width="120" height="92" rx="6" fill="#fff"/>
+  <circle cx="400" cy="245" r="78" fill="#f0f2f4" stroke="#111214" stroke-width="12"/>
+  <circle cx="400" cy="245" r="38" fill="#fff" stroke="#9aa2aa" stroke-width="10"/>
+  <rect x="146" y="335" width="310" height="34" rx="17" fill="#dfe3e6"/>
+  <rect x="146" y="335" width="180" height="34" rx="17" fill="#111214"/>
+  <text x="115" y="135" fill="#111214" font-family="Inter, Arial" font-size="24" font-weight="700">MANTENIMIENTO ATEGO</text>
+</svg>

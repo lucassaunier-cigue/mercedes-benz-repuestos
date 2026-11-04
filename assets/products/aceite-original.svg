@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title">
+  <title id="title">Aceite original Mercedes-Benz</title>
+  <rect width="640" height="520" fill="#f5f6f7"/>
+  <rect x="200" y="105" width="240" height="330" rx="24" fill="#111214"/>
+  <rect x="235" y="75" width="105" height="55" rx="8" fill="#2d3135"/>
+  <path d="M340 105h46c30 0 54 24 54 54v32" fill="none" stroke="#111214" stroke-width="28" stroke-linecap="round"/>
+  <rect x="230" y="185" width="180" height="150" rx="8" fill="#fff"/>
+  <circle cx="320" cy="232" r="32" fill="#dfe3e6"/>
+  <path d="M320 204l9 22 24 2-18 15 6 23-21-12-21 12 6-23-18-15 24-2z" fill="#111214"/>
+  <text x="262" y="296" fill="#111214" font-family="Inter, Arial" font-size="22" font-weight="800">ORIGINAL</text>
+  <text x="250" y="382" fill="#fff" font-family="Inter, Arial" font-size="26" font-weight="800">ACEITE</text>
+</svg>

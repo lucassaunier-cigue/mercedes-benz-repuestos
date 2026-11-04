@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title">
+  <title id="title">Escobillas limpiaparabrisas</title>
+  <rect width="640" height="520" fill="#f5f6f7"/>
+  <rect x="70" y="145" width="500" height="230" rx="8" fill="#fff" stroke="#d7dce0"/>
+  <path d="M130 305c120-85 260-120 395-118" fill="none" stroke="#111214" stroke-width="24" stroke-linecap="round"/>
+  <path d="M125 330c132-73 280-91 390-84" fill="none" stroke="#747b84" stroke-width="12" stroke-linecap="round"/>
+  <rect x="255" y="252" width="85" height="28" rx="6" fill="#111214" transform="rotate(-16 297.5 266)"/>
+  <path d="M155 155l330 220" stroke="#d7dce0" stroke-width="8" stroke-linecap="round"/>
+  <text x="135" y="125" fill="#111214" font-family="Inter, Arial" font-size="24" font-weight="700">ESCOBILLAS</text>
+</svg>
